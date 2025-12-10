@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lerf-mouse-pointer</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <style>
+      #circle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: hotpink;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="circle"></div>
+    <script>
+      const circle = document.querySelector("#circle");
+      let mouseX = 0,
+        mouseY = 0,
+        startX = 0,
+        startY = 0;
+
+      window.addEventListener("mousemove", function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        circle.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      });
+
+      function frame() {
+        requestAnimationFrame(frame);
+        startX = lerf(startX, mouseX, 0.05);
+        startY = lerf(startY, mouseY, 0.05);
+
+        circle.style.transform = `translate(${startX}px, ${startY}px)`;
+      }
+
+      function lerf(s, e, a) {
+        return s + (e - s) * a;
+      }
+
+      requestAnimationFrame(frame);
+    </script>
+  </body>
+</html>
