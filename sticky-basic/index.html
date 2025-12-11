@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky basic</title>
+    <style>
+      body {
+        padding: 120vh 0;
+        background-color: #f1ccdd;
+      }
+      .main-content {
+        width: 100%;
+        height: 500vh;
+        background-color: #00ddaa;
+      }
+      .sticky {
+        width: 100%;
+        height: 200px;
+        background-color: #aaffcc;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="sticky">stikcy header</div>
+    </div>
+  </body>
+</html>

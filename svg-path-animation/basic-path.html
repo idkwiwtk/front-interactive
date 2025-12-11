@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Path Animation</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        background: #fcedda;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      svg {
+        fill: none;
+        width: 100px;
+        stroke-width: 1px;
+      }
+
+      path {
+        stroke: #000;
+        stroke-dasharray: 47;
+        stroke-dashoffset: 47;
+        animation: path 1000ms forwards infinite;
+      }
+
+      @keyframes path {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 1">
+      <path d="M0 0.5H506" stroke="black" />
+    </svg>
+  </body>
+</html>
